@@ -16,7 +16,7 @@ void swap(int *p1, int *p2);
 
 int main()
 {
-    int *p1, *p2, *p, a, b;
+    int *p1, *p2, a, b;
     printf("please enter two integer numbers:");
     scanf("%d %d", &a, &b);
     p1 = &a;
