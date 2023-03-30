@@ -22,14 +22,17 @@ int main()
 {
     int a[11] = {0,1,2,3,4,5,6,7,8,9,10};
 
-
     printf("********* 数组初始值 ***********\n");
     printfarr(a, 11);
-
     //inv1(a, 11);
     inv2(a, 11);
+    printf("\n********* 数组第一次倒序后 ***********\n");
+    printfarr(a, 11);
 
-    printf("\n********* 数组倒序后 ***********\n");
+    int *p = a;
+    //inv1(p, 11);
+    inv2(p, 11);
+    printf("\n********* 数组第二次倒序后 ***********\n");
     printfarr(a, 11);
 
     return 0;
@@ -38,10 +41,10 @@ int main()
 // inv1函数的定义(形参为数组名形式)
 void inv1(int x[], int n)
 {
-    int temp, middle = (n - 1) / 2;
+    int middle = (n - 1) / 2;
     for (int i = 0; i <= middle; i++)
     {
-        swap(x+i, x + (n - i - 1));
+        swap(x+i, x + (n-i-1));
     }
     
 }
@@ -49,10 +52,10 @@ void inv1(int x[], int n)
 // inv2函数的定义(形参为指针变量名形式)
 void inv2(int *x, int n)
 {
-    int temp, middle = (n - 1) / 2;
+    int middle = (n - 1) / 2;
     for (int i = 0; i <= middle; i++)
     {
-        swap(x+i, x + (n - i - 1));
+        swap(x+i, x + (n-i-1));
     }
     
 }
@@ -69,7 +72,7 @@ void swap(int *p1, int *p2)
 // swap函数的定义
 void printfarr(int x[], int n)
 {
-    for (int *p = x; p < (x + n); p++)
+    for (int *p = x; p < (x+n); p++)
     {
         printf("%d ", *p);
     }
